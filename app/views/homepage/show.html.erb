@@ -1,0 +1,10 @@
+<h1>Cageflix</h1>
+<h3>Netflix for Nic Cage movies</h3>
+<% if current_user.id != nil %>
+    <p>Welcome <%= current_user.username %></p>
+
+    <%= button_to "Sign Out", signout_path, method: :delete %>
+<% else %>
+    <%= link_to 'Sign In', signin_path %>
+    <%= link_to 'Sign Up', new_user_path %>
+<% end %>
